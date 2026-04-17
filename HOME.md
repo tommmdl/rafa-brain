@@ -1,10 +1,10 @@
-# 🧠 rafa-brain
+# rafa-brain
 
 > Segundo cérebro do Rafa — Cloud & MLOps Engineer
 
 ---
 
-## 🚀 Projetos ativos
+##  Projetos ativos
 
 ```dataview
 TABLE status, tecnologias, prazo
@@ -15,7 +15,7 @@ SORT file.mtime DESC
 
 ---
 
-## 📚 Estudos em andamento
+##  Estudos em andamento
 
 ```dataview
 TABLE tema, fonte, status
@@ -26,7 +26,7 @@ SORT file.mtime DESC
 
 ---
 
-## ✅ Tarefas pendentes
+##  Tarefas pendentes
 
 ```dataview
 TASK
@@ -37,7 +37,7 @@ SORT file.mtime DESC
 
 ---
 
-## 📝 Notas recentes
+##  Notas recentes
 
 ```dataview
 TABLE file.mtime AS "Modificado"
@@ -49,7 +49,7 @@ LIMIT 10
 
 ---
 
-## 📅 Notas diárias recentes
+##  Notas diárias recentes
 
 ```dataview
 TABLE file.mtime AS "Data"
