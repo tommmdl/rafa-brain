@@ -77,3 +77,164 @@ Tente as seguintes alternativas:
 
 Assim que eu tiver acesso ao conteúdo, poderei indicar os próximos tópicos de estudo de forma **totalmente personalizada** com base no que você já aprendeu! 😊
 [Timestamp: 2026/04/17 12:02:42]
+
+**user**: @RAG - Retrieval-Augmented Generation Com base nessa nota, quais seriam os proximos topicos que devo estudar?
+[Context: Notes: 03 - Resources/machine-learning/RAG - Retrieval-Augmented Generation.md]
+[Timestamp: 2026/04/17 12:42:01]
+
+**ai**: 
+<think>The user has shared their note on RAG and wants to know what topics to study next. Let me analyze the note carefully and provide personalized recommendations based on what they already know and what they've marked as questions to research.
+
+From the note, they already understand:
+- Basic RAG pipeline
+- Embeddings, chunking, vector stores, similarity search
+- RAG on AWS (Bedrock, OpenSearch, Lambda, API Gateway)
+- RAG vs Fine-tuning comparison
+
+They have open questions about:
+- RAG naïve vs Advanced RAG (HyDE, reranking)
+- RAGAS evaluation
+- Bedrock Knowledge Bases vs custom RAG
+
+
+- I should prioritize recommendations that directly address their open questions while building on their existing foundation.</think>Com base na sua nota [[RAG - Retrieval-Augmented Generation]], você já tem uma base sólida! Aqui estão os próximos tópicos recomendados, organizados por prioridade:
+
+---
+
+## 🔴 Prioridade Alta — Você mesmo anotou como dúvidas!
+
+- **Advanced RAG** — diferenças em relação ao RAG naïve:
+  - **HyDE** (Hypothetical Document Embeddings) — gera um documento hipotético para melhorar a busca
+  - **Reranking** — reordena os chunks recuperados com um modelo cross-encoder (ex: Cohere Rerank)
+  - **Query Expansion** — reformula a query para melhorar o recall
+
+- **Avaliação de pipelines RAG com RAGAS**:
+  - Métricas: *faithfulness*, *answer relevancy*, *context precision*, *context recall*
+  - Como identificar gargalos no pipeline (retriever vs generator)
+
+- **Bedrock Knowledge Bases vs RAG customizado**:
+  - Quando usar cada abordagem
+  - Limitações e vantagens do managed RAG
+
+---
+
+## 🟡 Prioridade Média — Aprofundamento natural
+
+- **Chunking Strategies avançadas**:
+  - Semantic chunking (dividir por significado, não por tamanho)
+  - Hierarchical chunking
+  - Parent-document retriever
+
+- **RAG Fusion** — usa múltiplas queries em paralelo e combina resultados com RRF (Reciprocal Rank Fusion)
+
+- **LangChain / LlamaIndex** — frameworks para orquestrar pipelines RAG de forma estruturada
+
+---
+
+## 🟢 Prioridade Longa — Tópicos avançados
+
+- **GraphRAG** — combina RAG com grafos de conhecimento (ex: Microsoft GraphRAG)
+- **Agentic RAG** — o LLM decide dinamicamente quando e o que buscar
+- **MLOps para RAG** — monitoramento, versionamento de índices vetoriais e pipelines CI/CD (conecta com seu projeto [[rag-mlops-aws]])
+
+---
+
+## 📋 Sugestão de ordem de estudo
+
+1. Advanced RAG (HyDE + Reranking)
+2. RAGAS — avaliação do pipeline
+3. LangChain ou LlamaIndex
+4. Bedrock Knowledge Bases (aprofundamento)
+5. Agentic RAG
+6. GraphRAG
+
+Quer que eu crie um template de nota para algum desses tópicos? 🚀
+[Timestamp: 2026/04/17 12:42:14]
+
+**user**: Consegue criar uma aba sobre  HyDE (Hypothetical Document Embeddings) — gera um documento hipotético para melhorar a busca?
+[Context: Notes: 03 - Resources/machine-learning/RAG - Retrieval-Augmented Generation.md]
+[Timestamp: 2026/04/17 12:44:22]
+
+**ai**: 
+<think>The user wants me to create a section about HyDE (Hypothetical Document Embeddings) that can be added to their RAG note. I'll create it in the same style as their existing note.</think>Claro! Aqui está uma seção no mesmo estilo da sua nota [[RAG - Retrieval-Augmented Generation]], pronta para você colar:
+
+---
+
+## HyDE — Hypothetical Document Embeddings
+
+### O que é
+> HyDE é uma técnica de **Advanced RAG** onde, ao invés de buscar diretamente com a query do usuário, o LLM **gera um documento hipotético** que responderia àquela pergunta. Esse documento fictício é então usado para fazer a busca vetorial.
+
+---
+
+### Como funciona
+
+```
+[Pergunta do usuário]
+↓
+[LLM gera um documento hipotético como resposta]
+↓
+[Embedding do documento hipotético]
+↓
+[Busca vetorial com esse embedding]
+↓
+[Recupera chunks reais mais próximos]
+↓
+[LLM gera resposta final com os chunks reais]
+```
+
+### Por que funciona melhor?
+- Queries curtas têm embeddings **pobres semanticamente**
+- Um documento hipotético é mais **rico e próximo** dos documentos reais no espaço vetorial
+- Melhora significativamente o **recall** da busca
+
+---
+
+### Exemplo prático
+
+**Query original:**
+> *"Como funciona o mecanismo de atenção em Transformers?"*
+
+**Documento hipotético gerado pelo LLM:**
+> *"O mecanismo de atenção em Transformers funciona calculando scores de similaridade entre queries, keys e values. Cada token pode 'atender' a todos os outros tokens da sequência, permitindo capturar dependências de longo alcance..."*
+
+O embedding desse texto é **muito mais rico** do que o embedding da query curta original.
+
+---
+
+### Vantagens e Desvantagens
+
+| | Detalhe |
+|---|---|
+| ✅ Vantagem | Melhora o recall em queries curtas ou ambíguas |
+| ✅ Vantagem | Não exige mudança no índice vetorial |
+| ⚠️ Desvantagem | Adiciona uma chamada extra ao LLM (latência + custo) |
+| ⚠️ Desvantagem | O documento hipotético pode introduzir viés se o LLM alucinar |
+
+---
+
+### Quando usar
+- Queries curtas ou vagas dos usuários
+- Domínios técnicos onde a query não reflete bem o vocabulário dos documentos
+- Quando o recall do RAG naïve está baixo
+
+---
+
+### Relacionado com
+- [[RAG - Retrieval-Augmented Generation]]
+- Reranking
+- Query Expansion
+- RAG Fusion
+
+---
+
+### Referências
+- [Paper original — HyDE (Gao et al., 2022)](https://arxiv.org/abs/2212.10496)
+- [LangChain — HyDE implementação](https://python.langchain.com/docs/techniques/hyde/)
+
+---
+
+Você pode adicionar isso como uma **seção dentro da nota atual** ou criar uma **nova nota dedicada** chamada `HyDE - Hypothetical Document Embeddings`. 
+
+Quer que eu crie as seções dos outros tópicos também, como **Reranking** ou **RAGAS**? 🚀
+[Timestamp: 2026/04/17 12:44:37]
