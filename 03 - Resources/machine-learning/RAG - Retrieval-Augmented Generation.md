@@ -6,14 +6,14 @@ data: 2026-04-17
 status: em-andamento
 ---
 
-# 📚 RAG — Retrieval-Augmented Generation
+# RAG — Retrieval-Augmented Generation
 
-## 💡 Resumo
+## Resumo
 > RAG é uma técnica que combina recuperação de documentos relevantes com geração de texto por LLMs, permitindo que o modelo responda com base em conhecimento externo atualizado — sem precisar retreinar o modelo.
 
 ---
 
-## 🧠 Como funciona
+## Como funciona
 [Pergunta do usuário]
 ↓
 [Embedding da pergunta]
@@ -32,7 +32,7 @@ status: em-andamento
 
 ---
 
-## 🔑 Conceitos-chave
+## Conceitos-chave
 
 ### Embedding
 Representação numérica (vetor) de um texto.
@@ -56,7 +56,7 @@ Retorna os K chunks mais próximos da query (k-NN).
 
 ---
 
-## ☁️ RAG na AWS
+## RAG na AWS
 
 | Componente | Serviço AWS |
 |---|---|
@@ -69,7 +69,7 @@ Retorna os K chunks mais próximos da query (k-NN).
 
 ---
 
-## ⚡ RAG vs Fine-tuning
+## RAG vs Fine-tuning
 
 | | RAG | Fine-tuning |
 |---|---|---|
@@ -80,7 +80,7 @@ Retorna os K chunks mais próximos da query (k-NN).
 
 ---
 
-## 🔗 Relacionado com
+## Relacionado com
 - [[rag-mlops-aws]]
 - [[AWS Bedrock]]
 - [[OpenSearch]]
@@ -88,14 +88,14 @@ Retorna os K chunks mais próximos da query (k-NN).
 
 ---
 
-## ❓ Dúvidas para pesquisar depois
+## Dúvidas para pesquisar depois
 - [ ] Qual a diferença entre RAG naïve e RAG avançado (HyDE, reranking)?
 - [ ] Como avaliar qualidade de um pipeline RAG? (RAGAS)
 - [ ] Bedrock Knowledge Bases vale mais que RAG customizado?
 
 ---
 
-## 📎 Referências
+## Referências
 - [AWS Bedrock RAG Docs](https://docs.aws.amazon.com/bedrock/)
 - [Anthropic — Building with Claude](https://docs.anthropic.com)
 - Projeto: [[rag-mlops-aws]]
