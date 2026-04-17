@@ -7,17 +7,17 @@ tecnologias: []
 repositorio: 
 ---
 
-# 🛠️ {{title}}
+# {{title}}
 
-## 🎯 Objetivo
+## Objetivo
 > O que esse projeto entrega?
 
-## 📋 Contexto
+## Contexto
 - **Empresa/Cliente:** 
 - **Stack:** 
 - **Repositório:** 
 
-## ✅ Tarefas
+## Tarefas
 
 ### Em andamento
 - [ ] 
@@ -28,12 +28,12 @@ repositorio:
 ### Concluídas
 - [x] 
 
-## 🧱 Arquitetura / Decisões técnicas
+## Arquitetura / Decisões técnicas
 
-## 🚧 Bloqueios / Problemas
+##  Bloqueios / Problemas
 - 
 
-## 📓 Log de progresso
+## Log de progresso
 
 ### {{date:YYYY-MM-DD}}
 - 

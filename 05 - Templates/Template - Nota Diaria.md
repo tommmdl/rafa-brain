@@ -3,12 +3,12 @@ tags: [diario]
 data: {{date:YYYY-MM-DD}}
 ---
 
-# 📅 {{date:DD/MM/YYYY}}
+# {{date:DD/MM/YYYY}}
 
-## 🌅 Intenção do dia
+## Intenção do dia
 > O que precisa acontecer hoje pra ser um bom dia?
 
-## ✅ Tarefas
+## Tarefas
 
 ### Trabalho (e-Core)
 - [ ] 
@@ -19,8 +19,8 @@ data: {{date:YYYY-MM-DD}}
 ### Projetos
 - [ ] 
 
-## 🧠 O que aprendi hoje
+## O que aprendi hoje
 - 
 
-## 💭 Reflexão rápida
+## Reflexão rápida
 > Como foi o dia? O que faria diferente?

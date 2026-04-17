@@ -6,25 +6,25 @@ data: {{date:YYYY-MM-DD}}
 status: em-andamento
 ---
 
-# 📚 {{title}}
+# {{title}}
 
-## 💡 Resumo
+## Resumo
 > Em uma frase: o que é isso?
 
-## 🧠 Conceitos principais
+## Conceitos principais
 
 ### Conceito 1
 - 
 
-## 🔗 Como se conecta com o que já sei
+## Como se conecta com o que já sei
 - Relacionado com: [[]]
 
-## 💻 Exemplo prático / código
+##  Exemplo prático / código
 \`\`\`python
 
 \`\`\`
 
-## ❓ Dúvidas para pesquisar depois
+## Dúvidas para pesquisar depois
 - [ ] 
 
 ## 📎 Referências
